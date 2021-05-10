@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Get Your Vaccine</title>
+</head>
+
+<body>
+    <form id="form">
+        <div class="mycontainer">
+            <h1>Get Your Vaccine</h1>
+
+            <p>Get notified as soon as a vaccine is available for you</p>
+
+            <label><b>Name</b></label>
+            <input class="input" type="text" id="name" placeholder="Enter name" name="name" required>
+            
+            <label><b>Phone number</b></label>
+            <input class="input" type="text" id="phone" placeholder="Enter phone number (Do-not add country code)" name="phones" required>
+            
+            <label><b>PinCode</b></label>
+            <input class="input" type="text" id="pincode" placeholder="Enter PinCode" name="pincode" required>
+
+            <label><b>Age</b></label>
+            <input class="input" type="text" id="age" placeholder="Enter Age" name="age" required>
+            
+            <label><b>Select Vaccine type</b></label>
+            <div class="checkbox">
+                <span>
+                    <input class="input" type="checkbox" id="covaxin" checked>
+                    <label>COVAXIN</label>
+                </span>
+
+                <span>
+                    <input class="input" type="checkbox" id="covishield">
+                    <label>COVISHIELD</label>
+                </span>
+            </div>
+
+            <button type="submit" class="mybtn">Regiter</button>
+            <div id="deregister"><a>Deregister</a></div>
+        </div>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>
