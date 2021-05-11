@@ -126,14 +126,14 @@ function matchCenter(centers){
 
 function sendSMS(message,phoneNumber){
 
-    // client.messages
-    //   .create({
-    //            body: message, 
-    //            from: '+14804852440', 
-    //            to: `+91${phoneNumber}`
-    //         })
-    //   .then(res => console.log(res))
-    //   .catch(err => console.log(err));
+    client.messages
+      .create({
+               body: message, 
+               from: '+14804852440', 
+               to: `+91${phoneNumber}`
+            })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
 }
 
 module.exports = checkAvailability;
