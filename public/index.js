@@ -8,8 +8,9 @@ document.getElementById('deregister')
         .addEventListener('click' , deregister)
 
 function register(){
-    let name = document.getElementById("name").value;
+    let username = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
     let age = document.getElementById("age").value;
     let pincode = document.getElementById("pincode").value;
     let covaxin = document.getElementById("covaxin").checked;
@@ -39,8 +40,7 @@ function register(){
         return;
     }
 
-    let data = {'name':name, 'phone':phone, 'age':age, 'pincode':pincode, 'covaxin':covaxin, 'covishield':covishield}
-
+    let data = {'username':username, 'phone':phone, 'password': password, 'age':age, 'pincode':pincode, 'covaxin':covaxin, 'covishield':covishield}
     fetch('/register',{
         method: 'POST',
         headers: {
@@ -48,27 +48,45 @@ function register(){
         },
         body: JSON.stringify(data)
     })
-    .then(res => res.text())
-    .then(txt => {
-        console.log(txt)
+    .then(res => {
+
+        if (res.status == 400)
+        {
+            alert('Username already exists');
+            return;
+        }
+
+        if (res.status != 200) throw res.status;
+
+        alert('You have successfully registered')
         document.getElementById('form').reset()
     })
-    .catch(err => console.log('Error in sending information',err))
+    .catch(err => {
+        alert('Unable to register. Please try again later')
+        console.log('Error in sending information',err)
+    })
 
 }
 
 function deregister(){
 
-    var name = prompt('Enter the exact name used during registration)')
+    var name = prompt('Enter the exact name used during registration')
+    var password = prompt('Enter Password')
 
-    fetch(`/deregister/${name}`)
+    fetch(`/deregister/${name}/${password}`)
     .then(res => {
-        if (res.status != 200)
-            throw 'Cannot send information to deregister'+res.status
 
-        return res.text()
+        if (res.status == 404)
+            alert('Incorrect Username')
+
+        if (res.status == 401)
+            alert('Incorrect Password')
+
+        if (res.status != 200)
+            throw 'Cannot to deregister\nError code: '+res.status
+
+        alert('Deregistered Successfully')
     })
-    .then(text => console.log(text))
     .catch(err => console.log(err))
 
 }

@@ -47,9 +47,7 @@ const checkAvailability = async() => {
             .then(json => matchCenter(json.centers))
             .catch(err => console.log('Error in getting fetching cowin api: '+err))    
 
-        });
-
-  
+        });  
     },HALFDAY);
 }
 
@@ -58,7 +56,7 @@ function matchCenter(centers){
     if (!centers || centers.length == 0)
         return;
 
-    let query = `SELECT name,phone,age,covaxin,covishield from users WHERE pincode = ${centers[0].pincode}`;
+    let query = `SELECT username,phone,age,covaxin,covishield from users WHERE pincode = ${centers[0].pincode}`;
 
     db.query(query)
     .then(data => {        
@@ -107,7 +105,7 @@ function matchCenter(centers){
             if (msg == '')
             return;
             
-            msg = `Hello ${user.name}\n` + msg;
+            msg = `Hello ${user.username}\n` + msg;
 
             //twilio has set a max limit of 1600 characters
             let trimmedmsg = msg.length > 1400 ? msg.substring(0,1400) : msg;
@@ -123,14 +121,14 @@ function matchCenter(centers){
 
 function sendSMS(message,phoneNumber){
 
-    client.messages
-      .create({
-               body: message, 
-               from: '+14804852440', 
-               to: `+91${phoneNumber}`
-            })
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+    // client.messages
+    //   .create({
+    //            body: message, 
+    //            from: '+14804852440', 
+    //            to: `+91${phoneNumber}`
+    //         })
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
 }
 
 module.exports = checkAvailability;
