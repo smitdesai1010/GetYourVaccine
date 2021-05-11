@@ -9,7 +9,7 @@ const checkAvailability = async() => {
     const SECOND = 1000;
     const MINUTE = 60 * SECOND;
     const HOUR = 60 * MINUTE;
-    const HALFDAY = 12 * HOUR;
+    const CHECKINGTIME = 2 * HOUR;
     
     //first fetch all unique districts
     //check availability in those districts
@@ -39,6 +39,10 @@ const checkAvailability = async() => {
                  } 
             })
             .then(res => {
+
+                if (res.status == 403)  //sent too many requests, blocked temporarily
+                    CHECKINGTIME = 26 * HOUR;  //cooldown period
+
                 if (res.status != 200)
                     throw 'Error code: '+res.status;
     
@@ -48,7 +52,7 @@ const checkAvailability = async() => {
             .catch(err => console.log('Error in getting fetching cowin api: '+err))    
 
         });  
-    },HALFDAY);
+    },CHECKINGTIME);
 }
 
 function matchCenter(centers){
@@ -90,6 +94,7 @@ function matchCenter(centers){
                     
                 })
 
+                //no valid sessions found
                 if (tempmsg == '') 
                     return;
 
