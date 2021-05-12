@@ -24,7 +24,6 @@ router.get('/:name/:password', (req, res) => {
         return db.query(sqlquery)
     })
     .then(queryres => {
-        console.log(queryres)
         res.sendStatus(200)
     })
     .catch(err => console.log('Error in deregistration: '+err))
