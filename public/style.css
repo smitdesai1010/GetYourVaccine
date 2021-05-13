@@ -97,6 +97,6 @@ a{
 @media screen and (max-width: 1080px) {
   
     .mycontainer{
-        width: 70vw;
+        width: 100vw;
     }
   }
