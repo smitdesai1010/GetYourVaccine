@@ -9,7 +9,7 @@ const checkAvailability = async() => {
     const SECOND = 1000;
     const MINUTE = 60 * SECOND;
     const HOUR = 60 * MINUTE;
-    const CHECKINGTIME = 2 * HOUR;
+    const CHECKINGTIME = 0.5 * HOUR;
     
     //first fetch all unique districts
     //check availability in those districts
