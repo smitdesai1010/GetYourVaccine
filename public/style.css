@@ -88,15 +88,46 @@ a{
 }
 
 /* Change styles on extra small screens */
-@media screen and (max-width: 768px) {
-  .mycontainer{
-      width: 80vw;
-  }
+@media screen and (max-width: 1080px) {
+    .mycontainer{
+        width: 60vw;
+    }
 }
 
-@media screen and (max-width: 1080px) {
-  
+@media screen and (max-width: 768px) {
     .mycontainer{
         width: 100vw;
     }
+}
+
+@media screen and (max-width: 470px) {
+  .mycontainer{
+      width: 100vw;
   }
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  
+  .information{
+    font-size: 2.8vw;
+    margin-bottom: 40px;
+  }
+
+  .information p{
+    font-size: inherit;
+    margin: 10px;
+  }
+
+  h1{
+    margin-bottom: 0.4em;
+  }
+
+  h6{
+    font-size: 9px;
+    margin-top: 0em;
+    margin-bottom: 0.4em;
+  }
+}
