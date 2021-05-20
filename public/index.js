@@ -58,7 +58,7 @@ function register(){
 
         if (res.status != 200) throw res.status;
 
-        alert('You have successfully registered')
+        alert('You have successfully registered\nNote: This app only notifies you, you still need to register it via the Cowin portal or Arogyasetu app')
         document.getElementById('form').reset()
     })
     .catch(err => {

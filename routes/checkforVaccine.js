@@ -115,7 +115,8 @@ function matchCenter(centers){
             let trimmedmsg = msg.length > 1400 ? msg.substring(0,1400) : msg;
 
             trimmedmsg += `Note: You still need to register via the Cowin portal or Arogyasetu app\n`+ 
-                          `To stop receiving this sms, kindly deregister yourself from our website`;   
+                          `To stop receiving this sms, kindly deregister yourself from our website\n`+
+                          `http://ec2-13-232-113-91.ap-south-1.compute.amazonaws.com:5500/`;   
         
             sendSMS(trimmedmsg,user.phone);
         })
