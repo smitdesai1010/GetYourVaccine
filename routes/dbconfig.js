@@ -12,7 +12,7 @@ con.connect((err) => {
     if (err)
     {
        console.log('Error in connecting to the database: '+err)
-       return;
+       process.exit(1)
     }
     console.log('Connected to the database');
  })

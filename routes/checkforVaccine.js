@@ -5,10 +5,11 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 const checkAvailability = async() => {
+    //check twice a day
     const SECOND = 1000;
     const MINUTE = 60 * SECOND;
     const HOUR = 60 * MINUTE;
-    const CHECKINGTIME = 0.5 * HOUR;
+    const CHECKINGTIME = 3 * HOUR;
     
     //first fetch all unique districts
     //check availability in those districts
@@ -118,19 +119,19 @@ function matchCenter(centers){
                           `To stop receiving this sms, kindly deregister yourself from our website\n`+
                           `http://ec2-13-232-113-91.ap-south-1.compute.amazonaws.com:5500/`;   
         
-            sendSMS(trimmedmsg,user.phone);
+            sendSMS(trimmedmsg);
         })
     })
 
 }
 
-function sendSMS(message,phoneNumber){
+function sendSMS(message){
 
     client.messages
       .create({
                body: message, 
                from: '+14804852440', 
-               to: `+91${phoneNumber}`
+               to: `+919512501679`
             })
       .then(res => console.log(res))
       .catch(err => console.log(err));
