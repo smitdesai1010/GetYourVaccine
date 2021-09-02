@@ -1,4 +1,3 @@
-
 # GetYourVaccine
 
 A web-application which notifies users via a SMS as a vaccine is available in 
@@ -12,8 +11,8 @@ Note: Only works for Indian vaccination program.
 
 ## Screenshots
 <p align="center" width="100%">
-  <img src="Assets/SS-1.jpg" width="45%" height="250"/>
-  <img src="Assets/SS-2.jpg" width="45%" height="400"/>
+  <img src="Assets/SS-1.jpg" width="55%" height="400"/>
+  <img src="Assets/SS-2.jpg" width="40%" height="250"/>
 </p>
 
 
