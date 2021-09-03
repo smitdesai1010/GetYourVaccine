@@ -1,11 +1,11 @@
-const db = require(__dirname + '/dbquery')
+const db = require(__dirname + '/database')
 const fetch = require('node-fetch')
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 const checkAvailability = async() => {
-    //check twice a day
+    //check every 3 hours
     const SECOND = 1000;
     const MINUTE = 60 * SECOND;
     const HOUR = 60 * MINUTE;
@@ -19,7 +19,7 @@ const checkAvailability = async() => {
 
     setInterval(async () => {
 
-        const uniquePincodes = await db.query("select distinct pincode from users")
+        const uniquePincodes = await db.executeQuery("select distinct pincode from users")
 
         let dateObj = new Date();
         let date = dateObj.getUTCDate()+'-'+(dateObj.getUTCMonth() + 1)+'-'+dateObj.getUTCFullYear();
@@ -55,14 +55,14 @@ const checkAvailability = async() => {
     },CHECKINGTIME);
 }
 
-function matchCenter(centers){
+function matchCenter(centers) {
 
     if (!centers || centers.length == 0)
         return;
 
-    let query = `SELECT username,phone,age,covaxin,covishield from users WHERE pincode = ${centers[0].pincode}`;
+    const query = `SELECT username,phone,age,covaxin,covishield from users WHERE pincode = ${centers[0].pincode}`;
 
-    db.query(query)
+    db.executeQuery(query)
     .then(data => {        
         data.forEach(user => {
             let msg = '';    
@@ -107,8 +107,7 @@ function matchCenter(centers){
             })
 
             //empty msg means no valid center & session found according to users need
-            if (msg == '')
-            return;
+            if (msg == '')  return;
             
             msg = `Hello ${user.username}\n` + msg;
 
@@ -125,8 +124,7 @@ function matchCenter(centers){
 
 }
 
-function sendSMS(message){
-
+function sendSMS(message) {
     client.messages
       .create({
                body: message, 

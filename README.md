@@ -30,7 +30,7 @@ Note: Only works for Indian vaccination program.
 
 ## Optimizations
 
-* Built mysql abstraction class with pool connections to avoid code repetition and database connection being re-established every time a request comes
+* Built mysql abstraction module with pool connections to avoid code repetition and database connection being re-established every time a request comes
 <br/>
 
 * Changed the mode of communication from emails to SMS.     

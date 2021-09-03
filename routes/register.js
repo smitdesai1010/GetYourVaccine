@@ -1,25 +1,26 @@
 const express = require('express')
-const db = require(__dirname+'/dbquery')
-var router = express();
+const db = require(__dirname+'/database')
+const router = express();
 
 
 //-----------------Route---------------------
 router.use(express.json())
 router.post('/', (req, res) => {
 
-   var data = req.body;
+   const data = req.body;
    
-   var usernamequery = `SELECT username from users where username='${data.username}'`
+   const usernamequery = `SELECT username from users where username='${data.username}'`
    
-   db.query(usernamequery)
+   db.executeQuery(usernamequery)
    .then(usernamequeryres => {
-      if (usernamequeryres.length != 0)
-         res.sendStatus(400);
 
-      else
-      {
-         var sqlquery = `INSERT into users(username,phone,password,pincode,age,covaxin,covishield) VALUES ('${data.username}','${data.phone}','${data.password}',${data.pincode},${data.age},${data.covaxin},${data.covishield})`
-         db.query(sqlquery);
+      if (usernamequeryres.length != 0) {
+         res.sendStatus(400);
+      }
+
+      else {
+         let sqlquery = `INSERT into users(username,phone,password,pincode,age,covaxin,covishield) VALUES ('${data.username}','${data.phone}','${data.password}',${data.pincode},${data.age},${data.covaxin},${data.covishield})`
+         db.executeQuery(sqlquery);
          res.sendStatus(200);
       }   
    })
