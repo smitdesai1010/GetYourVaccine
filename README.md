@@ -62,13 +62,13 @@ https://www.mysql.com/downloads/
 
 Clone the project
 
-```bash
+```
 git clone https://github.com/smitdesai1010/GetYourVaccine.git
 ```
 
 Go to the project directory
 
-```bash
+```
 cd GetYourVaccine
 npm install     
 npm run start   
