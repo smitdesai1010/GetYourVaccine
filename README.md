@@ -66,7 +66,7 @@ Clone the project
 git clone https://github.com/smitdesai1010/GetYourVaccine.git
 ```
 
-To run this project, you will need to add the following environment variables in a .env file located in the root directory of the project
+Add the following environment variables in a .env file located in the root directory of the project
 
 <pre>
     <span>MYSQL_USERNAME</span>
