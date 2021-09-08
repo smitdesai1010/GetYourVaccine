@@ -66,19 +66,7 @@ Clone the project
 git clone https://github.com/smitdesai1010/GetYourVaccine.git
 ```
 
-Go to the project directory
-
-```
-cd GetYourVaccine
-npm install     
-npm run start   
-```
-
-  
-## Environment Variables
-
-To run this project, you will need to add the following 
-environment variables to your .env file present in root directory
+To run this project, you will need to add the following environment variables in a .env file located in the root directory of the project
 
 <pre>
     <span>MYSQL_USERNAME</span>
@@ -90,6 +78,14 @@ environment variables to your .env file present in root directory
     <span>TWILIO_AUTH_TOKEN</span>
     </a>
 </pre>
+
+Go to the project directory
+
+```
+cd GetYourVaccine
+npm install     
+npm run start   
+```
 
   
 ## Acknowledgements
