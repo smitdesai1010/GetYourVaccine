@@ -87,6 +87,8 @@ npm install
 npm run start   
 ```
 
+Go to http://localhost:5500/
+
   
 ## Acknowledgements
 
