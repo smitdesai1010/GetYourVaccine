@@ -7,15 +7,18 @@ It was primarily build as India faced a vaccine shortage during it's intial vacc
 and the vaccine registration portal lacked a notifying feature. As a result of which, people had to
 poll for vaccine every few hours. 
 
-Note: Only works for Indian vaccination program. 
+Note: Only works for Indian 
+vaccination program. 
 
-## Screenshots
-<p align="center" width="100%">
-  <img src="Assets/SS-1.jpg" width="55%" height="400"/>
-  <img src="Assets/SS-2.jpg" width="40%" height="250"/>
-</p>
+<details>
+    <summary style="cursor:pointer; font-size: 28px; font-weight: bold; font">Screenshots</summary>
+    <p align="center" width="100%">
+    <img src="Assets/SS-1.jpg" width="55%" height="400"/>
+    <img src="Assets/SS-2.jpg" width="40%" height="250"/>
+    </p>
+</details>
 
-
+<br/>
 
 
 ## Working
