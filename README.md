@@ -7,6 +7,8 @@ It was primarily build as India faced a vaccine shortage during it's intial vacc
 and the vaccine registration portal lacked a notifying feature. As a result of which, people had to
 poll for vaccine every few hours. 
 
+ 57 registered users in first 3 weeks.
+
 Note: Only works for Indian 
 vaccination program. 
 
@@ -40,7 +42,7 @@ vaccination program.
     * A majority of users checked emails twice-thrice a day. So by the time a user checks the email, the vaccine goes out of stock. Since SMS are checked instantly, it removed the communication latency
 <br/>
 
-* Prevented sending SMSs at night and reduced Twilio billing by 30%.     
+* Prevented sending SMSs at night and reduced Twilio billing by 25%.     
     * SMSs send from 11pm-7am are reluctant as the user is sleeping (unless he/she/they is a programmer).
 
  
