@@ -3,7 +3,7 @@
 A web-application which notifies users via a SMS as a vaccine is available in 
 their borough matching their demographic profile (age and vaccine preferences).
 
-It was primarily build as India faced a vaccine shortage during it's intial vaccination drive
+It was primarily build as India faced a vaccine shortage during it's intial vaccination drive as vaccines were booked before most people got aware
 and the vaccine registration portal lacked a notifying feature. As a result of which, people had to
 poll for vaccine every few hours. 
 
