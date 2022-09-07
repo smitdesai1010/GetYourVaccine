@@ -25,7 +25,7 @@ vaccination program.
 
 ## Working
 * A user can register by creating a account 
-* The server checks for vaccine every 3 hours
+* The server checks for vaccine every x hours
     * A list of all unique pincodes (borough indentifier) is queried from the databse
     * Vaccine information is fetched for every borough
     * Information of users living in a particular borough is queried from the database
